@@ -1,0 +1,75 @@
+
+--querys de productos y parametros v1
+select p.id as id_producto,
+	   p.descripcion,
+	   p.unmed as unidad_medida,
+	   f.va as watts
+	from productos.productos p, 
+		 parametricas.fichatec_watts f
+    where p.id=f.id		 
+
+
+	select CAST(regexp_split_to_table('20,2', E',') AS integer), 
+	(CAST(regexp_split_to_table('1,2', E',') AS integer));
+
+
+select * from conversiones.tabcampos
+select * from conversiones.tabla1 --TABLA DONDE SE ALMACEN LOS CALCULOS
+select * from conversiones.tabla1hist --TABLA HISTORICA DONDE SE VA GUARDANDO UN LOG
+
+
+Delete from conversiones.tabcampos
+Delete from conversiones.tabla1
+Delete from conversiones.tabla1hist
+
+select conversiones.calculo_vatios_amperios(8, 2, 'Oscar')
+select conversiones.ejecucion_masiva_calculo_vatios_amperios('20,2,7','1,2,3','Oscar')
+select conversiones.ejecucion_masiva_calculo_vatios_amperios(3, '20,2,7', '1,2,3','Oscar')
+
+--Ejecucion masiva
+CALL conversiones.ejecucion_masiva_calculo_vatios_amperios_v1('5,8,3','1,2,3','Oscar',2114)
+--CAMPOS A LLENAR POR EJECUCION
+cantidad_de_cada_producto_separado_por_coma text,
+id_producto_de_cada_producto_separado_por_coma text,
+usuario
+Id_carga
+
+
+--Ejecucion unitaria
+CALL conversiones.calculo_vatios_amperios_v1(30, 1, 'Alex', 11)
+--CAMPOS A LLENAR POR EJECUCION
+cantidad integer,
+id_producto integer,
+v_usuario character
+Id_carga
+
+
+select cast(substring(current_timestamp::text,1,19)as timestamp)
+
+select * from conversiones.tabla1
+
+SELECT CAST(regexp_split_to_table('10,15,5,4,6,20', E',') AS integer)
+
+SELECT ('Miguel  Troyano      no sabe    escribir','( ){2,}',' ','g');
+
+select *from conversiones.tabla1
+
+
+select * from conversiones.tabla1
+
+call conversiones.calculo_cuadro_cargas_v3(cantidad, id_producto, v_usuario, id_carga, voltaje, v_tipo_tuberia, v_conductor, v_longitud, fp)
+call conversiones.calculo_cuadro_cargas_v3(20, 1, 'Oscar', 888, 120, 'PVC', 'Cu', 5, 0.85)
+
+
+call conversiones.ejec_masiva_calculo_cuadro_cargas_v3('10,11,2,1', '1,2,3,4', 'test', 9898,'120,120,120,208' ,  'PVC,PVC,PVC,PVC', 'Cu,Cu,Cu,Cu', '6,3,2', 0.85)   
+
+CALL conversiones.masivo_calculo_cuadro_cargas_v3(
+	 CAST('10,11,2,1' as text) , 
+	 CAST('1,2,3,4' as text) , 
+	 CAST('test' as varchar) , 
+	 CAST( 9898 as integer) , 
+	 CAST('120,120,120,208' as text)  , 
+	 CAST('PVC,PVC,PVC,PVC' as text)  , 
+	 CAST('Cu,Cu,Cu,Cu' as text)  , 
+	 CAST('6,3,2,1' as text) , 
+	 CAST(0.85 as integer) )

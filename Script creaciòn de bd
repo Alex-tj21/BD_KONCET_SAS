@@ -1,0 +1,26 @@
+#Comandos de instalación de Postgresql y Pgadmin
+
+--Actualizacion sistema
+sudo apt-get update
+--Instalaciòn postgres
+sudo apt install postgresql postgresql-contrib
+--Ingresar a BD
+sudo su - postgres
+
+psql
+
+--Creacion de esquema - usuario
+create user automatizacion with password 'Koncet2014';
+--creacion bd
+create database databasekoncet with owner automatizacion;
+--dar permisos
+alter user automatizacion with superuser;
+
+--Intalación de pgadmin
+
+sudo curl https://www.pgadmin.org/static/packages_pgadmin_org.pub | sudo apt-key add
+
+sudo sh -c '. /etc/upstream-release/lsb-release && echo "deb https://ftp.postgresql.org/pub/pgadmin/pgadmin4/apt/$DISTRIB_CODENAME pgadmin4 main" > /etc/apt/sources.list.d/pgadmin4.list && apt update'
+
+--instalacion pgadmin4
+sudo apt install pgadmin4

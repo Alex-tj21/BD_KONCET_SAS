@@ -1,0 +1,40 @@
+--creacion de esquemas 		
+CREATE SCHEMA IF NOT EXISTS parametricas
+    AUTHORIZATION automatizacion;
+	
+GRANT ALL ON SCHEMA parametricas TO automatizacion;
+GRANT ALL ON SCHEMA parametricas TO pg_read_all_data;
+GRANT ALL ON SCHEMA parametricas TO pg_write_all_data;		
+
+--asignacion de privilegios al esquema
+GRANT ALL ON SCHEMA parametricas TO pg_read_all_data WITH GRANT OPTION;
+GRANT ALL ON SCHEMA parametricas TO pg_write_all_data WITH GRANT OPTION;
+GRANT ALL ON SCHEMA parametricas TO postgres WITH GRANT OPTION;
+
+--creacion de esquemas 		
+CREATE SCHEMA IF NOT EXISTS productos
+    AUTHORIZATION automatizacion;
+	
+GRANT ALL ON SCHEMA productos TO automatizacion;
+GRANT ALL ON SCHEMA productos TO pg_read_all_data;
+GRANT ALL ON SCHEMA productos TO pg_write_all_data;		
+
+--asignacion de privilegios al esquema
+GRANT ALL ON SCHEMA productos TO pg_read_all_data WITH GRANT OPTION;
+GRANT ALL ON SCHEMA productos TO pg_write_all_data WITH GRANT OPTION;
+GRANT ALL ON SCHEMA productos TO postgres WITH GRANT OPTION;
+
+
+--creacion de esquemas 		
+CREATE SCHEMA IF NOT EXISTS conversiones
+    AUTHORIZATION automatizacion;
+	
+GRANT ALL ON SCHEMA conversiones TO automatizacion;
+GRANT ALL ON SCHEMA conversiones TO pg_read_all_data;
+GRANT ALL ON SCHEMA conversiones TO pg_write_all_data;		
+
+--asignacion de privilegios al esquema
+GRANT ALL ON SCHEMA conversiones TO pg_read_all_data WITH GRANT OPTION;
+GRANT ALL ON SCHEMA conversiones TO pg_write_all_data WITH GRANT OPTION;
+GRANT ALL ON SCHEMA conversiones TO postgres WITH GRANT OPTION;
+
